@@ -14,6 +14,7 @@ public class Solution {
             int number = scanner.nextInt();
             arrayOfNumbers[i] = number;
         }
+        scanner.close();
 
         int counter = 0;
 
