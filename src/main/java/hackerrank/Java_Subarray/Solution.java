@@ -10,20 +10,22 @@ public class Solution {
         Scanner scanner = new Scanner(System.in);
 
         int size = scanner.nextInt();
-        int[] arrayOfNumbers = new int[size];
+        int[] arrayOfNumbers = new int[size + 1];
         IntStream.range(0, size)
                 .forEach(i -> arrayOfNumbers[i] = scanner.nextInt());
 
         scanner.close();
 
-        int counter = 0;
+        IntStream.range(0, size)
+                .forEach(i -> {
+                    for (int j = i; j <= size; j++) {
+                        int[] subArray = Arrays.copyOfRange(arrayOfNumbers, i, j);
+                        if (Arrays.stream(subArray).sum() < 0) {
+                            arrayOfNumbers[size] += 1;
+                        }
+                    }
+                });
 
-        for (int i = 0; i < size; i++) {
-            for (int j = i; j <= size; j++) {
-                int[] subArray = Arrays.copyOfRange(arrayOfNumbers, i, j);
-                if (Arrays.stream(subArray).sum() < 0) counter++;
-            }
-        }
-        System.out.println(counter);
+        System.out.println(arrayOfNumbers[size]);
     }
 }
