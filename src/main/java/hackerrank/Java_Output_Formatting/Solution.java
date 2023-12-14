@@ -24,6 +24,7 @@ public class Solution {
 //            System.out.print(String.format("%-15s%03d", myString, myInt)
 //                    .concat(System.lineSeparator()));
 //        }
+
         scanner.close();
 
         System.out.println("================================");

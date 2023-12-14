@@ -14,4 +14,3 @@ public class Solution {
                 .forEach(i -> System.out.println(String.format("%d x %d = %d", myInt, i, myInt * i)));
     }
 }
-
