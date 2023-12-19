@@ -1,5 +1,6 @@
 package hackerrank.Java_Int_to_String;
 
+import java.util.Objects;
 import java.util.Scanner;
 
 public class Solution {
@@ -18,7 +19,7 @@ public class Solution {
             result = "Wrong answer";
         }
 
-        if (myInt >= -100 && myInt <= 100 && myInt == Integer.parseInt(myString)) {
+        if (myInt >= -100 && myInt <= 100 && myInt == Integer.parseInt(Objects.requireNonNull(myString))) {
             result = "Good job";
         } else {
             result = "Wrong answer";
